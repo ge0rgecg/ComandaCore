@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NfSRXZg4Azj5+z9wRpOU/q6uNF0d6pGJ8WLTTZWESxEaKcLO9XQazSWzngCMIp3zs8ZRtrcXapfz3H11iBC2ng==",
+  "success": true,
+  "projectFilePath": "D:\\Git\\TesteClearSale\\ComandaAPI\\API\\API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\George\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
