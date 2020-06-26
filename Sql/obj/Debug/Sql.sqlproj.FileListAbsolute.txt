@@ -1,5 +1,0 @@
-D:\Git\TesteClearSale\ComandaAPI\Sql\bin\Debug\Sql.dacpac
-D:\Git\TesteClearSale\ComandaAPI\Sql\bin\Debug\ComandaSql.dll
-D:\Git\TesteClearSale\ComandaAPI\Sql\bin\Debug\ComandaSql.pdb
-D:\Git\TesteClearSale\ComandaAPI\Sql\obj\Debug\ComandaSql.dll
-D:\Git\TesteClearSale\ComandaAPI\Sql\obj\Debug\ComandaSql.pdb
