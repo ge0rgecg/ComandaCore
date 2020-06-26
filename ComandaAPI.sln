@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{1
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Sql", "Sql\Sql.sqlproj", "{8FD35E6F-2D20-4B32-82EC-C904C20E575B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorio", "Repositorio\Repositorio.csproj", "{9836355C-5E30-4816-AD90-E0673C78A01C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositorio", "Repositorio\Repositorio.csproj", "{9836355C-5E30-4816-AD90-E0673C78A01C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{CEF0BC36-9895-4E84-95B1-C5CEFC1F95D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Dominio\Dominio.csproj", "{CEF0BC36-9895-4E84-95B1-C5CEFC1F95D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servico", "Servico\Servico.csproj", "{561D73C5-0818-4ADF-B500-008DAC2DA899}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{CEF0BC36-9895-4E84-95B1-C5CEFC1F95D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEF0BC36-9895-4E84-95B1-C5CEFC1F95D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEF0BC36-9895-4E84-95B1-C5CEFC1F95D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561D73C5-0818-4ADF-B500-008DAC2DA899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561D73C5-0818-4ADF-B500-008DAC2DA899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561D73C5-0818-4ADF-B500-008DAC2DA899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561D73C5-0818-4ADF-B500-008DAC2DA899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

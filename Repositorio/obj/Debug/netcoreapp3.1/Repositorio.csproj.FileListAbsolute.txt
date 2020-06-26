@@ -9,3 +9,7 @@ D:\Git\TesteClearSale\ComandaAPI\Repositorio\bin\Debug\netcoreapp3.1\Dominio.pdb
 D:\Git\TesteClearSale\ComandaAPI\Repositorio\obj\Debug\netcoreapp3.1\Repositorio.csproj.CopyComplete
 D:\Git\TesteClearSale\ComandaAPI\Repositorio\obj\Debug\netcoreapp3.1\Repositorio.dll
 D:\Git\TesteClearSale\ComandaAPI\Repositorio\obj\Debug\netcoreapp3.1\Repositorio.pdb
+D:\Git\TesteClearSale\ComandaAPI\Repositorio\bin\Debug\netcoreapp3.1\Repositorio.runtimeconfig.json
+D:\Git\TesteClearSale\ComandaAPI\Repositorio\bin\Debug\netcoreapp3.1\Repositorio.runtimeconfig.dev.json
+D:\Git\TesteClearSale\ComandaAPI\Repositorio\obj\Debug\netcoreapp3.1\Repositorio.csproj.CoreCompileInputs.cache
+D:\Git\TesteClearSale\ComandaAPI\Repositorio\obj\Debug\netcoreapp3.1\Repositorio.genruntimeconfig.cache
