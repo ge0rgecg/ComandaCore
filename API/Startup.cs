@@ -43,34 +43,8 @@ namespace ComandaAPI
                     },
                     Version = "v1",
                     Title = "Comanda API",
-                    Description = "API para gerenciar comanda."
+                    Description = "API para gerenciar comanda.",
                 });
-
-                //options.DescribeAllEnumsAsStrings();
-                //options.IncludeXmlComments(basePath);
-                //options.SwaggerDoc("v1", new Info
-                //{
-                //    Title = settings.SwaggerTitle,
-                //    Version = "v1",
-                //    Description = settings.SwaggerDescription,
-                //    Contact = new Contact
-                //    {
-                //        Name = "Procob IT Team",
-                //        Email = "desenvolvimento@procobservicos.com.br"
-                //    },
-                //    License = new License
-                //    {
-                //        Name = "Finamax",
-                //        Url = "http://www.finamax.com.br"
-                //    }
-                //});
-                //options.AddSecurityDefinition("oauth2", new OAuth2Scheme
-                //{
-                //    Type = "oauth2",
-                //    Flow = "application",
-                //    TokenUrl = settings.SwaggerTokenUrl
-                //});
-                //options.OperationFilter<AuthorizeCheckOperationFilter>();
             });
         }
 
