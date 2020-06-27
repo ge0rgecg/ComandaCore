@@ -1,0 +1,17 @@
+D:\Git\TesteClearSale\ComandaAPI\Servico\bin\Debug\netcoreapp3.1\Servico.deps.json
+D:\Git\TesteClearSale\ComandaAPI\Servico\bin\Debug\netcoreapp3.1\Servico.runtimeconfig.json
+D:\Git\TesteClearSale\ComandaAPI\Servico\bin\Debug\netcoreapp3.1\Servico.runtimeconfig.dev.json
+D:\Git\TesteClearSale\ComandaAPI\Servico\bin\Debug\netcoreapp3.1\Servico.dll
+D:\Git\TesteClearSale\ComandaAPI\Servico\bin\Debug\netcoreapp3.1\Servico.pdb
+D:\Git\TesteClearSale\ComandaAPI\Servico\bin\Debug\netcoreapp3.1\Dominio.dll
+D:\Git\TesteClearSale\ComandaAPI\Servico\bin\Debug\netcoreapp3.1\Repositorio.dll
+D:\Git\TesteClearSale\ComandaAPI\Servico\bin\Debug\netcoreapp3.1\Dominio.pdb
+D:\Git\TesteClearSale\ComandaAPI\Servico\bin\Debug\netcoreapp3.1\Repositorio.pdb
+D:\Git\TesteClearSale\ComandaAPI\Servico\obj\Debug\netcoreapp3.1\Servico.csprojAssemblyReference.cache
+D:\Git\TesteClearSale\ComandaAPI\Servico\obj\Debug\netcoreapp3.1\Servico.AssemblyInfoInputs.cache
+D:\Git\TesteClearSale\ComandaAPI\Servico\obj\Debug\netcoreapp3.1\Servico.AssemblyInfo.cs
+D:\Git\TesteClearSale\ComandaAPI\Servico\obj\Debug\netcoreapp3.1\Servico.csproj.CoreCompileInputs.cache
+D:\Git\TesteClearSale\ComandaAPI\Servico\obj\Debug\netcoreapp3.1\Servico.csproj.CopyComplete
+D:\Git\TesteClearSale\ComandaAPI\Servico\obj\Debug\netcoreapp3.1\Servico.dll
+D:\Git\TesteClearSale\ComandaAPI\Servico\obj\Debug\netcoreapp3.1\Servico.pdb
+D:\Git\TesteClearSale\ComandaAPI\Servico\obj\Debug\netcoreapp3.1\Servico.genruntimeconfig.cache

@@ -16,14 +16,6 @@ namespace API.Controllers
             _comandaServico = comandaServico;
         }
 
-        // GET api/<ComandaController>/5
-        [HttpDelete("{id}")]
-        public string Get(int id)
-        {
-            //_comandaServico.
-            return "value";
-        }
-
         // POST api/<ComandaController>
         [HttpPost("{idComanda}")]
         public Retorno<Fechamento> FecharComanda(int idComanda)
@@ -39,7 +31,7 @@ namespace API.Controllers
         }
 
         // DELETE api/<ComandaController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{idComanda}")]
         public Retorno<bool> ResetarComanda(int idComanda)
         {
             return _comandaServico.Resetar(idComanda);
