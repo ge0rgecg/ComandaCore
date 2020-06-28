@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Git\\TesteClearSale\\ComandaAPI\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
         "projectPath": "D:\\Git\\TesteClearSale\\ComandaAPI\\Dominio\\Dominio.csproj",
-        "packagesPath": "C:\\Users\\TEMP.DESKTOP-SMAS20D\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\George\\.nuget\\packages\\",
         "outputPath": "D:\\Git\\TesteClearSale\\ComandaAPI\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TEMP.DESKTOP-SMAS20D\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\George\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

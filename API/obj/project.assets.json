@@ -6022,7 +6022,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TEMP.DESKTOP-SMAS20D\\.nuget\\packages\\": {}
+    "C:\\Users\\George\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -6030,11 +6030,11 @@
       "projectUniqueName": "D:\\Git\\TesteClearSale\\ComandaAPI\\API\\API.csproj",
       "projectName": "API",
       "projectPath": "D:\\Git\\TesteClearSale\\ComandaAPI\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\TEMP.DESKTOP-SMAS20D\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\George\\.nuget\\packages\\",
       "outputPath": "D:\\Git\\TesteClearSale\\ComandaAPI\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\TEMP.DESKTOP-SMAS20D\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\George\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

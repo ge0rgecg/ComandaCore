@@ -35,7 +35,7 @@ namespace API.Controllers
         }
 
         /// <summary>
-        /// Associo o código do produto a comanda.
+        /// Associa o código do produto a comanda.
         /// </summary>
         /// <param name="numeroComanda">Número da comanda.</param>
         /// <param name="idProduto">Código do produto.</param>
@@ -51,7 +51,7 @@ namespace API.Controllers
         }
 
         /// <summary>
-        /// Limpo os produtos que estão na comanda.
+        /// Limpa os produtos que estão na comanda.
         /// </summary>
         /// <param name="numeroComanda">Número da comanda.</param>
         /// <returns>Retorno o status da operação e uma mensagem, caso exista.</returns>

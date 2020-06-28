@@ -11,14 +11,20 @@ namespace Servico.Servicos
         private IProdutoRepositorio _produtoRepositorio { get; set; }
         private IControleComandaRepositorio _controleComandaRepositorio { get; set; }
         private IFechamentoRepositorio _fechamentoRepositorio { get; set; }
+        private ILimiteProdutoRepositorio _limiteProdutoRepositorio { get; set; }
+        private IComboRepositorio _comboRepositorio { get; set; }
 
         public ComandaServico(IProdutoRepositorio produtoRepositorio,
             IControleComandaRepositorio controleComandaRepositorio,
-            IFechamentoRepositorio fechamentoRepositorio)
+            IFechamentoRepositorio fechamentoRepositorio,
+            ILimiteProdutoRepositorio limiteProdutoRepositorio,
+            IComboRepositorio comboRepositorio)
         {
             _produtoRepositorio = produtoRepositorio;
             _controleComandaRepositorio = controleComandaRepositorio;
             _fechamentoRepositorio = fechamentoRepositorio;
+            _limiteProdutoRepositorio = limiteProdutoRepositorio;
+            _comboRepositorio = comboRepositorio;
         }
         public async Task<Retorno<SemConteudo>> AdicionarProduto(ControleComanda controleComanda)
         {
@@ -39,6 +45,21 @@ namespace Servico.Servicos
                     Mensagem = "Informar um número de comanda válido.",
                     Ok = false,
                 };
+            }
+
+            var limites = _limiteProdutoRepositorio.GetAll().Where(w => w.Produto_Id == controleComanda.Produto_Id);
+
+            if (limites.Any())
+            {
+                var quantidade = _controleComandaRepositorio.GetAllByNumeroComanda(controleComanda.NumeroComanda).Count(c => c.Produto_Id == controleComanda.Produto_Id);
+
+                if (limites.FirstOrDefault().QuantidadeLimite == quantidade)
+                {
+                    return new Retorno<SemConteudo>
+                    {
+                        Mensagem = $"Limite de produto excedido, não é permitido pedir mais desse item."
+                    };
+                }
             }
 
             await _controleComandaRepositorio.Create(controleComanda);
@@ -67,13 +88,16 @@ namespace Servico.Servicos
                 ValorTotal = valorTotal
             };
 
+            //implementar regra de desconto.
+
+
+
             await _fechamentoRepositorio.Create(fechamento);
 
             await _controleComandaRepositorio.AssinarFechamento(
                 lista.Select(s => new ControleComanda
                 { Fechamento_Id = fechamento.Id, 
                     Id = s.Id, NumeroComanda = s.NumeroComanda, Produto_Id = s.Produto_Id }).ToList());
-                //lista.Select(s => { s.Fechamento_Id = fechamento.Id; return s; }));
 
             return new Retorno<Fechamento> { Ok = true, Objeto = fechamento };
         }
