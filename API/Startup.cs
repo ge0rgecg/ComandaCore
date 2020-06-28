@@ -1,18 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Repositorio.Contexto;
+using Repositorio.Interface;
+using Repositorio.Repositorios;
 using Servico.Interface;
 using Servico.Servicos;
-using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.EntityFrameworkCore;
+using System.IO;
+using System.Reflection;
+using System;
 
 namespace ComandaAPI
 {
@@ -28,8 +27,13 @@ namespace ComandaAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.addDbContext
-            services.AddSingleton<IComandaServico, ComandaServico>();
+            services.AddDbContext<ContextoDb>(options => options.UseSqlite("Data Source=.;"));
+
+            services.AddScoped<IControleComandaRepositorio, ControleComandaRepositorio>();
+            services.AddScoped<IFechamentoRepositorio, FechamentoRepositorio>();
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            services.AddScoped<IComandaServico, ComandaServico>();
+            
             services.AddControllers();
 
             services.AddSwaggerGen(options =>
@@ -45,6 +49,10 @@ namespace ComandaAPI
                     Title = "Comanda API",
                     Description = "API para gerenciar comanda.",
                 });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
             });
         }
 

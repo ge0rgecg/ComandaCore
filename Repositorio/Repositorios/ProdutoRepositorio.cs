@@ -6,6 +6,6 @@ namespace Repositorio.Repositorios
 {
     public class ProdutoRepositorio : RepositorioBase<Produto>, IProdutoRepositorio
     {
-        public ProdutoRepositorio() : base(new ContextoDb(null)) { }
+        public ProdutoRepositorio(ContextoDb dbContexto) : base(dbContexto) { }
     }
 }

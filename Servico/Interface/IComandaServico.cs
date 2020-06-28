@@ -5,10 +5,10 @@ namespace Servico.Interface
 {
     public interface IComandaServico
     {
-        Retorno<bool> AdicionarProduto(ControleComanda controleComanda);
+        Retorno<SemConteudo> AdicionarProduto(ControleComanda controleComanda);
 
         Retorno<Fechamento> FecharComanda(int idComanda);
 
-        Retorno<bool> Resetar(int idComanda);
+        Retorno<SemConteudo> Resetar(int idComanda);
     }
 }

@@ -15,6 +15,8 @@ namespace Repositorio.Repositorios
 
         public RepositorioBase(ContextoDb dbContexto)
         {
+            if (dbContexto == null)
+                throw new ArgumentNullException(nameof(dbContexto));
             _dbContexto = dbContexto;
         }
 

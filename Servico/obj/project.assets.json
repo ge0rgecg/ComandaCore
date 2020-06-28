@@ -1615,7 +1615,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\George\\.nuget\\packages\\": {}
+    "C:\\Users\\TEMP.DESKTOP-SMAS20D\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1623,11 +1623,11 @@
       "projectUniqueName": "D:\\Git\\TesteClearSale\\ComandaAPI\\Servico\\Servico.csproj",
       "projectName": "Servico",
       "projectPath": "D:\\Git\\TesteClearSale\\ComandaAPI\\Servico\\Servico.csproj",
-      "packagesPath": "C:\\Users\\George\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\TEMP.DESKTOP-SMAS20D\\.nuget\\packages\\",
       "outputPath": "D:\\Git\\TesteClearSale\\ComandaAPI\\Servico\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\George\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TEMP.DESKTOP-SMAS20D\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
