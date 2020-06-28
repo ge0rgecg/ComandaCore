@@ -1,9 +1,11 @@
 ﻿using Dominio;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Repositorio.Config;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Text;
 
 namespace Repositorio.Contexto
@@ -14,7 +16,7 @@ namespace Repositorio.Contexto
             : base(options)
         { }
 
-        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Produto> Produto { get; set; }
 
         public DbSet<Fechamento> Fechamento { get; set; }
 
@@ -22,9 +24,10 @@ namespace Repositorio.Contexto
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Properties()
-            //    .Where(p => p.Name == "Id_" + //p.ReflectedType.Name)
-            //    .Configure(p => p.IsKey());
+            foreach (IMutableEntityType entity in modelBuilder.Model.GetEntityTypes())
+            {
+                entity.SetTableName(entity.DisplayName());
+            }
 
             modelBuilder.ApplyConfiguration(new ProdutoConfig());
             modelBuilder.ApplyConfiguration(new FechamentoConfig());

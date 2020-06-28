@@ -6,7 +6,7 @@ namespace Dominio
     {
         public int Id { get; set; }
 
-        public double ValorTotal { get; set; }
+        public decimal ValorTotal { get; set; }
 
         public ICollection<ControleComanda> ControleComandas { get; set; }
     }

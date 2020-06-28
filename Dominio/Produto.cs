@@ -10,7 +10,7 @@ namespace Dominio
         public int Id { get; set; }
         public string Nome { get; set; }
 
-        public double Valor { get; set; }
+        public decimal Valor { get; set; }
 
         public ICollection<ControleComanda> ControleComandas { get; set; }
     }

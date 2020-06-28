@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using System.IO;
 using System.Reflection;
 using System;
+using Newtonsoft.Json;
 
 namespace ComandaAPI
 {
@@ -53,6 +54,11 @@ namespace ComandaAPI
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 options.IncludeXmlComments(xmlPath);
+            });
+
+            services.AddMvc()
+                .AddNewtonsoftJson(options => {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
         }
 

@@ -1,6 +1,7 @@
 ﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
 using Servico.Interface;
+using System.Threading.Tasks;
 
 namespace API.Controllers
 {
@@ -28,7 +29,7 @@ namespace API.Controllers
         /// <param name="numeroComanda">Número da comanda</param>
         /// <returns>Retorno o status da operação, mensagem, caso exista  e as informações do fechamento.  </returns>
         [HttpPost("{numeroComanda}")]
-        public Retorno<Fechamento> FecharComanda(int numeroComanda)
+        public Task<Retorno<Fechamento>> FecharComanda(int numeroComanda)
         {
             return _comandaServico.FecharComanda(numeroComanda);
         }
@@ -40,11 +41,11 @@ namespace API.Controllers
         /// <param name="idProduto">Código do produto.</param>
         /// <returns>Retorno o status da operação e uma mensagem, caso exista.</returns>
         [HttpPut("{numeroComanda}")]
-        public Retorno<SemConteudo> RegistrarProduto(int numeroComanda, [FromBody] int idProduto)
+        public Task<Retorno<SemConteudo>> RegistrarProduto(int numeroComanda, [FromBody] int idProduto)
         {
-            return _comandaServico.AdicionarProduto(new ControleComanda 
-            { 
-                NumeroComanda = numeroComanda, 
+            return _comandaServico.AdicionarProduto(new ControleComanda
+            {
+                NumeroComanda = numeroComanda,
                 Produto_Id = idProduto
             });
         }
@@ -55,11 +56,9 @@ namespace API.Controllers
         /// <param name="numeroComanda">Número da comanda.</param>
         /// <returns>Retorno o status da operação e uma mensagem, caso exista.</returns>
         [HttpDelete("{numeroComanda}")]
-        public Retorno<SemConteudo> ResetarComanda(int numeroComanda)
+        public Task<Retorno<SemConteudo>> ResetarComanda(int numeroComanda)
         {
             return _comandaServico.Resetar(numeroComanda);
-
-            
         }
     }
 }

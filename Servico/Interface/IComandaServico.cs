@@ -1,14 +1,14 @@
 ﻿using Dominio;
-using System;
+using System.Threading.Tasks;
 
 namespace Servico.Interface
 {
     public interface IComandaServico
     {
-        Retorno<SemConteudo> AdicionarProduto(ControleComanda controleComanda);
+        Task<Retorno<SemConteudo>> AdicionarProduto(ControleComanda controleComanda);
 
-        Retorno<Fechamento> FecharComanda(int idComanda);
+        Task<Retorno<Fechamento>> FecharComanda(int idComanda);
 
-        Retorno<SemConteudo> Resetar(int idComanda);
+        Task<Retorno<SemConteudo>> Resetar(int idComanda);
     }
 }

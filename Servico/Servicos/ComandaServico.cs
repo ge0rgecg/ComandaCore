@@ -2,6 +2,7 @@
 using Repositorio.Interface;
 using Servico.Interface;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Servico.Servicos
 {
@@ -19,7 +20,7 @@ namespace Servico.Servicos
             _controleComandaRepositorio = controleComandaRepositorio;
             _fechamentoRepositorio = fechamentoRepositorio;
         }
-        public Retorno<SemConteudo> AdicionarProduto(ControleComanda controleComanda)
+        public async Task<Retorno<SemConteudo>> AdicionarProduto(ControleComanda controleComanda)
         {
             
             if(controleComanda.Produto_Id == 0)
@@ -40,12 +41,12 @@ namespace Servico.Servicos
                 };
             }
 
-            _controleComandaRepositorio.Create(controleComanda);
+            await _controleComandaRepositorio.Create(controleComanda);
 
             return new Retorno<SemConteudo> { Ok = true };
         }
 
-        public Retorno<Fechamento> FecharComanda(int numeroComanda)
+        public async Task<Retorno<Fechamento>> FecharComanda(int numeroComanda)
         {
             if (numeroComanda == 0)
             {
@@ -56,8 +57,9 @@ namespace Servico.Servicos
                 };
             }
 
-            var lista = _controleComandaRepositorio.GetAll().Where(w => w.NumeroComanda == numeroComanda && w.Fechamento_Id == null);
-
+            var lista = _controleComandaRepositorio.GetAllByNumeroComanda(numeroComanda)
+                .Where(w => w.Fechamento_Id == null);
+            
             var valorTotal = lista.Sum(s => s.Produto.Valor);
 
             var fechamento = new Fechamento
@@ -65,12 +67,12 @@ namespace Servico.Servicos
                 ValorTotal = valorTotal,
                 ControleComandas = lista.ToList()
             };
-            var retorno = _fechamentoRepositorio.Create(fechamento);
+            await _fechamentoRepositorio.Create(fechamento);
 
-            return new Retorno<Fechamento> { Ok = true };
+            return new Retorno<Fechamento> { Ok = true, Objeto = fechamento };
         }
 
-        public Retorno<SemConteudo> Resetar(int numeroComanda)
+        public async Task<Retorno<SemConteudo>> Resetar(int numeroComanda)
         {
             if(numeroComanda == 0)
             {
@@ -81,7 +83,7 @@ namespace Servico.Servicos
                 };
             }
 
-            var algo = _controleComandaRepositorio.Resetar(numeroComanda);
+            await _controleComandaRepositorio.Resetar(numeroComanda);
 
             return new Retorno<SemConteudo> { Ok = true };
         }

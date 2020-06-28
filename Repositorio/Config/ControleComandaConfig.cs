@@ -16,12 +16,10 @@ namespace Repositorio.Config
 
             builder.HasOne(o => o.Produto)
                     .WithMany(m => m.ControleComandas)
-                    .HasConstraintName("FK_Controle_Comanda_Produto")
                     .HasForeignKey(f => f.Produto_Id);
 
             builder.HasOne(o => o.Fechamento)
                     .WithMany(m => m.ControleComandas)
-                    .HasConstraintName("FK_Controle_Comanda_Fechamento")
                     .HasForeignKey(f => f.Fechamento_Id);
             
         }
