@@ -28,9 +28,17 @@ namespace Repositorio.Repositorios
                 { 
                     Id = e.Id, 
                     Fechamento_Id = e.Fechamento_Id,
+                    NumeroComanda = e.NumeroComanda,
                     Produto_Id = e.Produto_Id,
                     Produto = e.Produto})
                 .ToList();
+        }
+
+        public async Task AssinarFechamento(IEnumerable<ControleComanda> controleComandas)
+        {
+            _dbContexto.AttachRange(controleComandas);
+            _dbContexto.UpdateRange(controleComandas);
+            await _dbContexto.SaveChangesAsync();
         }
     }
 }

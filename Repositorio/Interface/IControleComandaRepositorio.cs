@@ -8,5 +8,6 @@ namespace Repositorio.Interface
     {
         Task Resetar(int numeroComanda);
         IEnumerable<ControleComanda> GetAllByNumeroComanda(int numeroComanda);
+        Task AssinarFechamento(IEnumerable<ControleComanda> controleComandas);
     }
 }

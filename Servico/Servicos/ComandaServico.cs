@@ -64,10 +64,16 @@ namespace Servico.Servicos
 
             var fechamento = new Fechamento
             {
-                ValorTotal = valorTotal,
-                ControleComandas = lista.ToList()
+                ValorTotal = valorTotal
             };
+
             await _fechamentoRepositorio.Create(fechamento);
+
+            await _controleComandaRepositorio.AssinarFechamento(
+                lista.Select(s => new ControleComanda
+                { Fechamento_Id = fechamento.Id, 
+                    Id = s.Id, NumeroComanda = s.NumeroComanda, Produto_Id = s.Produto_Id }).ToList());
+                //lista.Select(s => { s.Fechamento_Id = fechamento.Id; return s; }));
 
             return new Retorno<Fechamento> { Ok = true, Objeto = fechamento };
         }
