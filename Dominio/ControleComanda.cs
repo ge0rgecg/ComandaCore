@@ -14,6 +14,8 @@ namespace Dominio
 
         public int? Fechamento_Id { get; set; }
 
+        public decimal Desconto { get; set; }
+
         public virtual Produto Produto { get; set; }
 
         public virtual Fechamento Fechamento { get; set; }

@@ -1,12 +1,7 @@
 ﻿using Dominio;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Repositorio.Config;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Text;
 
 namespace Repositorio.Contexto
 {
@@ -22,6 +17,14 @@ namespace Repositorio.Contexto
 
         public DbSet<ControleComanda> ControleComanda { get; set; }
 
+        public DbSet<Combo> Combo { get; set; }
+
+        public DbSet<ComboItem> ComboItems { get; set; }
+
+        public DbSet<ComboDesconto> ComboDescontos { get; set; }
+
+        public DbSet<LimiteProduto> LimiteProduto { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (IMutableEntityType entity in modelBuilder.Model.GetEntityTypes())
@@ -32,6 +35,10 @@ namespace Repositorio.Contexto
             modelBuilder.ApplyConfiguration(new ProdutoConfig());
             modelBuilder.ApplyConfiguration(new FechamentoConfig());
             modelBuilder.ApplyConfiguration(new ControleComandaConfig());
+            modelBuilder.ApplyConfiguration(new ComboConfig());
+            modelBuilder.ApplyConfiguration(new ComboDescontoConfig());
+            modelBuilder.ApplyConfiguration(new ComboItemConfig());
+            modelBuilder.ApplyConfiguration(new LimiteProdutoConfig());
 
         }
     }

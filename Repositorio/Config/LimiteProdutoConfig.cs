@@ -10,7 +10,7 @@ namespace Repositorio.Config
         {
             builder.HasKey(h => h.Id);
             builder.Property(p => p.Id).HasColumnName("Id_LimiteProduto");
-            builder.Property(p => p.QuantidadeLimite).HasColumnName("Id_LimiteProduto");
+            builder.Property(p => p.QuantidadeLimite).HasColumnName("QuantidadeLimite");
         }
     }
 }

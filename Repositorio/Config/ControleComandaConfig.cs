@@ -13,6 +13,7 @@ namespace Repositorio.Config
             builder.Property(p => p.Id).HasColumnName("Id_ControleComanda");
             builder.Property(p => p.Fechamento_Id).HasColumnName("Fechamento_Id");
             builder.Property(p => p.Produto_Id).HasColumnName("Produto_Id");
+            builder.Property(p => p.Desconto).HasColumnName("Desconto");
 
             builder.HasOne(o => o.Produto)
                     .WithMany(m => m.ControleComandas)

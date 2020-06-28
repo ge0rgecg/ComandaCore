@@ -33,6 +33,10 @@ namespace ComandaAPI
             services.AddScoped<IControleComandaRepositorio, ControleComandaRepositorio>();
             services.AddScoped<IFechamentoRepositorio, FechamentoRepositorio>();
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            services.AddScoped<IComboRepositorio, ComboRepositorio>();
+            services.AddScoped<IComboItemRepositorio, ComboItemRepositorio>();
+            services.AddScoped<IComboDescontoRepositorio, ComboDescontoRepositorio>();
+            services.AddScoped<ILimiteProdutoRepositorio, LimiteProdutoRepositorio>();
             services.AddScoped<IComandaServico, ComandaServico>();
             
             services.AddControllers();

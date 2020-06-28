@@ -10,8 +10,6 @@
 
         public int Combo_Id { get; set; }
 
-        public virtual Produto Produto { get; set; }
-
-        public virtual Combo Fechamento { get; set; }
+        public virtual Combo Combo { get; set; }
     }
 }

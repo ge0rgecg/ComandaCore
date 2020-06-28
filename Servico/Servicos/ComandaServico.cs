@@ -89,15 +89,53 @@ namespace Servico.Servicos
             };
 
             //implementar regra de desconto.
+            var combos = _comboRepositorio.GetAllWithChilds();
 
+            foreach(var combo in combos)
+            {
+                var vezesDesconto = 0;
+                foreach(var item in combo.ComboItem)
+                {
+                    var quantidadeConsumida = lista.Count(w => w.Produto_Id == item.Produto_Id);
+                    var itemAtual = (quantidadeConsumida / item.Quantidade);
+                    if (itemAtual <= 0) 
+                    {
+                        vezesDesconto = 0;
+                        break;
+                    }
+
+                    vezesDesconto = (vezesDesconto == 0 || vezesDesconto > itemAtual) ? itemAtual : vezesDesconto;
+                }
+
+                if (vezesDesconto == 0) continue;
+
+                foreach(var item in combo.ComboDesconto)
+                {
+                    var descontoItem = lista.FirstOrDefault(f => f.Produto_Id == item.Produto_Id).Produto.Valor * item.Porcentagem / 100;
+
+                    var itens = lista.Where(w => w.Produto_Id == item.Produto_Id).Take(vezesDesconto);
+
+                    foreach(var i in itens)
+                    {
+                        i.Desconto += descontoItem;
+                    }
+
+                    fechamento.ValorTotal -= descontoItem * vezesDesconto;
+                }
+            }
 
 
             await _fechamentoRepositorio.Create(fechamento);
 
             await _controleComandaRepositorio.AssinarFechamento(
                 lista.Select(s => new ControleComanda
-                { Fechamento_Id = fechamento.Id, 
-                    Id = s.Id, NumeroComanda = s.NumeroComanda, Produto_Id = s.Produto_Id }).ToList());
+                { 
+                    Fechamento_Id = fechamento.Id, 
+                    Id = s.Id, 
+                    NumeroComanda = s.NumeroComanda, 
+                    Produto_Id = s.Produto_Id, 
+                    Desconto = s.Desconto 
+                }).ToList());
 
             return new Retorno<Fechamento> { Ok = true, Objeto = fechamento };
         }

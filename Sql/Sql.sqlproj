@@ -61,5 +61,10 @@
     <Build Include="Produto.sql" />
     <Build Include="ControleComanda.sql" />
     <Build Include="Fechamento.sql" />
+    <Build Include="LimiteProduto.sql" />
+    <Build Include="Combo.sql" />
+    <Build Include="ComboItem.sql" />
+    <Build Include="ComboDesconto.sql" />
+    <Build Include="ScriptInicial.sql" />
   </ItemGroup>
 </Project>

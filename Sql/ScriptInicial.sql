@@ -31,7 +31,7 @@ select c.id_combo, @idSuco, 1 from combo c where c.nome = 'Cerveja com suco'
 and not exists (select * from comboitem ci where ci.Combo_Id = c.Id_Combo and ci.Produto_Id = @idSuco )
 
 INSERT INTO ComboDesconto(Combo_Id, Produto_Id, Porcentagem)
-select c.id_combo, @idCerveja, 60 from combo c where c.nome = 'Cerveja com suco'
+select c.id_combo, @idCerveja, 40 from combo c where c.nome = 'Cerveja com suco'
 and not exists (select * from ComboDesconto ci where ci.Combo_Id = c.Id_Combo and ci.Produto_Id = @idCerveja )
 
 INSERT INTO COMBOITEM (Combo_Id, Produto_Id, Quantidade)
