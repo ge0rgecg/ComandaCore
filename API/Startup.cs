@@ -27,7 +27,7 @@ namespace ComandaAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ContextoDb>(options => options.UseSqlite("Data Source=.;"));
+            services.AddDbContext<ContextoDb>(options => options.UseSqlServer("Data Source=.;Initial Catalog=Comanda;Integrated Security=True"));
 
             services.AddScoped<IControleComandaRepositorio, ControleComandaRepositorio>();
             services.AddScoped<IFechamentoRepositorio, FechamentoRepositorio>();

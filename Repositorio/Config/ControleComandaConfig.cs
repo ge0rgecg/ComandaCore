@@ -10,15 +10,19 @@ namespace Repositorio.Config
         {
             builder.HasKey(h => h.Id);
 
-            builder.Property(p => p.Id).HasColumnName("Id_ControleComando");
+            builder.Property(p => p.Id).HasColumnName("Id_ControleComanda");
+            builder.Property(p => p.Fechamento_Id).HasColumnName("Fechamento_Id");
+            builder.Property(p => p.Produto_Id).HasColumnName("Produto_Id");
 
             builder.HasOne(o => o.Produto)
                     .WithMany(m => m.ControleComandas)
-                    .HasConstraintName("FK_Controle_Comanda_Produto");
+                    .HasConstraintName("FK_Controle_Comanda_Produto")
+                    .HasForeignKey(f => f.Produto_Id);
 
             builder.HasOne(o => o.Fechamento)
                     .WithMany(m => m.ControleComandas)
-                    .HasConstraintName("FK_Controle_Comanda_Fechamento");
+                    .HasConstraintName("FK_Controle_Comanda_Fechamento")
+                    .HasForeignKey(f => f.Fechamento_Id);
             
         }
     }

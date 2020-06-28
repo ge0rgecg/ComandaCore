@@ -25,35 +25,39 @@ namespace API.Controllers
         /// <summary>
         /// Realiza o fechamento da comanda.
         /// </summary>
-        /// <param name="NumeroComanda">Número da comanda</param>
+        /// <param name="numeroComanda">Número da comanda</param>
         /// <returns>Retorno o status da operação, mensagem, caso exista  e as informações do fechamento.  </returns>
-        [HttpPost("{NumeroComanda}")]
-        public Retorno<Fechamento> FecharComanda(int NumeroComanda)
+        [HttpPost("{numeroComanda}")]
+        public Retorno<Fechamento> FecharComanda(int numeroComanda)
         {
-            return _comandaServico.FecharComanda(NumeroComanda);
+            return _comandaServico.FecharComanda(numeroComanda);
         }
 
         /// <summary>
         /// Associo o código do produto a comanda.
         /// </summary>
-        /// <param name="NumeroComanda">Número da comanda.</param>
+        /// <param name="numeroComanda">Número da comanda.</param>
         /// <param name="idProduto">Código do produto.</param>
         /// <returns>Retorno o status da operação e uma mensagem, caso exista.</returns>
-        [HttpPut("{NumeroComanda}")]
-        public Retorno<SemConteudo> RegistrarProduto(int NumeroComanda, [FromBody] int idProduto)
+        [HttpPut("{numeroComanda}")]
+        public Retorno<SemConteudo> RegistrarProduto(int numeroComanda, [FromBody] int idProduto)
         {
-            return _comandaServico.AdicionarProduto(new ControleComanda());
+            return _comandaServico.AdicionarProduto(new ControleComanda 
+            { 
+                NumeroComanda = numeroComanda, 
+                Produto_Id = idProduto
+            });
         }
 
         /// <summary>
         /// Limpo os produtos que estão na comanda.
         /// </summary>
-        /// <param name="NumeroComanda">Número da comanda.</param>
+        /// <param name="numeroComanda">Número da comanda.</param>
         /// <returns>Retorno o status da operação e uma mensagem, caso exista.</returns>
-        [HttpDelete("{NumeroComanda}")]
-        public Retorno<SemConteudo> ResetarComanda(int NumeroComanda)
+        [HttpDelete("{numeroComanda}")]
+        public Retorno<SemConteudo> ResetarComanda(int numeroComanda)
         {
-            return _comandaServico.Resetar(NumeroComanda);
+            return _comandaServico.Resetar(numeroComanda);
 
             
         }
