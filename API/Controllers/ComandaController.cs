@@ -40,8 +40,8 @@ namespace API.Controllers
         /// </summary>
         /// <param name="numeroComanda">Número da comanda</param>
         /// <returns>Retorno o status da operação, mensagem, caso exista  e as informações do fechamento.  </returns>
-        [HttpPost("{numeroComanda}")]
-        public Task<Retorno<Fechamento>> FecharComanda(int numeroComanda)
+        [HttpPost]
+        public Task<Retorno<Fechamento>> FecharComanda([FromBody]int numeroComanda)
         {
             return _comandaServico.FecharComanda(numeroComanda);
         }

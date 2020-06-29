@@ -10,28 +10,30 @@
 
     @using (Html.BeginForm(FormMethod.Post))
     {
-        <div class="row">
-            <div class="col-2">Número comanda</div>
-            <div class="col-10">
-                @Html.TextBoxFor(model => model.NumeroComanda, new { @type = "number" })
+        <div class="container">
+            <div class="row">
+                <div class="col-2">Número comanda</div>
+                <div class="col-10">
+                    @Html.TextBoxFor(model => model.NumeroComanda, new { @type = "number" })
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-2">Produto</div>
-            <div class="col-10">
-                @Html.DropDownListFor(model =>
-                     model.IdProduto,
-                     Model.Produtos.Select(s => new SelectListItem
-                     {
-                         Text = s.Nome,
-                         Value = s.Id.ToString()
-                     }), "-- Selecione um produto --")
+            <div class="row">
+                <div class="col-2">Produto</div>
+                <div class="col-10">
+                    @Html.DropDownListFor(model =>
+                         model.IdProduto,
+                         Model.Produtos.Select(s => new SelectListItem
+                         {
+                             Text = s.Nome,
+                             Value = s.Id.ToString()
+                         }), "-- Selecione um produto --")
+                </div>
             </div>
-        </div>
 
-        <div>
-            <button class="btn btn-primary">Add Product</button>
+            <div>
+                <button class="btn btn-primary">Add Product</button>
+            </div>
         </div>
     }
 </div>

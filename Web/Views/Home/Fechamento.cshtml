@@ -1,0 +1,40 @@
+﻿@model FechamentoComandaViewModel
+@{
+    ViewData["Title"] = "Fechamento";
+}
+
+
+<div class="text-center">
+
+    <h1 class="display-4">Efetuar fechamento</h1>
+
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-2">Número comanda</div>
+                <div class="col-10">
+                    @Html.TextBoxFor(model => model.NumeroComanda, new { @type = "number" })
+                </div>
+            </div>
+
+            <div>
+                <button class="btn btn-primary">Fechar comanda</button>
+            </div>
+        </div>
+    }
+
+    @if (Model?.Fechamento?.ControleComandas != null)
+    {
+        @Html.Raw("<h1>Nota Fiscal - Comanda <b>Nº "+ Model.NumeroComanda +"</b></h1>")
+        
+
+        @foreach (var item in Model.Fechamento.ControleComandas)
+        {
+            @Html.Raw("Produto - " + item.Produto.Nome + " ---- Valor " + item.Produto.Valor.ToString("C") + " ----- Desconto " + item.Desconto.ToString("C") + " ------ Valor final <b>"+ (item.Produto.Valor - item.Desconto).ToString("C") +"</b> <BR/>");
+        }
+
+        @Html.Raw("Valor Total a pagar - <b>" + Model.Fechamento.ValorTotal.ToString("C") + "</b>");
+    }
+
+</div>
