@@ -2,6 +2,7 @@
 using Repositorio.Interface;
 using Servico.Interface;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -27,6 +28,18 @@ namespace Servico.Servicos
             _limiteProdutoRepositorio = limiteProdutoRepositorio == null ? throw new ArgumentNullException("limiteProdutoRepositorio") : limiteProdutoRepositorio;
             _comboRepositorio = comboRepositorio == null ? throw new ArgumentNullException("comboRepositorio") : comboRepositorio;
         }
+
+        public async Task<Retorno<IEnumerable<Produto>>> ObterProdutos()
+        {
+            var produtos = _produtoRepositorio.GetAll();
+            
+            return new Retorno<IEnumerable<Produto>>
+            {
+                Ok = true,
+                Objeto = produtos
+            };
+        }
+
         public async Task<Retorno<SemConteudo>> AdicionarProduto(ControleComanda controleComanda)
         {
             

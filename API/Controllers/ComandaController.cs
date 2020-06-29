@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Servico.Interface;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace API.Controllers
@@ -22,6 +23,16 @@ namespace API.Controllers
         public ComandaController(IComandaServico comandaServico)
         {
             _comandaServico = comandaServico == null ? throw new ArgumentNullException("comandaServico") : comandaServico;
+        }
+
+        /// <summary>
+        /// Obtem uma lista dos produtos disponiveis.
+        /// </summary>
+        /// <returns>Retorna uma lsita de produtos.</returns>
+        [HttpGet]
+        public Task<Retorno<IEnumerable<Produto>>> ObterProduto()
+        {
+            return _comandaServico.ObterProdutos();
         }
 
         /// <summary>

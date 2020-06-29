@@ -13,15 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Dominio\Dominio.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servico", "Servico\Servico.csproj", "{561D73C5-0818-4ADF-B500-008DAC2DA899}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{6EE1AA0E-DF1D-4E76-B8A0-AB4C6012F8BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{6EE1AA0E-DF1D-4E76-B8A0-AB4C6012F8BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C6D8C70D-548D-4BCC-92E4-C74CE69EFF0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.test", "API.test\API.test.csproj", "{2972E52F-528E-4DA0-8559-9555D3385A71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.test", "API.test\API.test.csproj", "{2972E52F-528E-4DA0-8559-9555D3385A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorio.Test", "Repositorio.Test\Repositorio.Test.csproj", "{C621B24A-41CD-46F2-9FD2-F5271238ADBD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servico.Test", "Servico.Test\Servico.Test.csproj", "{B5E8C04D-FCEE-4FD6-8536-2DE8A39AA970}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servico.Test", "Servico.Test\Servico.Test.csproj", "{B5E8C04D-FCEE-4FD6-8536-2DE8A39AA970}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +57,6 @@ Global
 		{2972E52F-528E-4DA0-8559-9555D3385A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2972E52F-528E-4DA0-8559-9555D3385A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2972E52F-528E-4DA0-8559-9555D3385A71}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C621B24A-41CD-46F2-9FD2-F5271238ADBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C621B24A-41CD-46F2-9FD2-F5271238ADBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C621B24A-41CD-46F2-9FD2-F5271238ADBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C621B24A-41CD-46F2-9FD2-F5271238ADBD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B5E8C04D-FCEE-4FD6-8536-2DE8A39AA970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B5E8C04D-FCEE-4FD6-8536-2DE8A39AA970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5E8C04D-FCEE-4FD6-8536-2DE8A39AA970}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -73,7 +67,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2972E52F-528E-4DA0-8559-9555D3385A71} = {C6D8C70D-548D-4BCC-92E4-C74CE69EFF0A}
-		{C621B24A-41CD-46F2-9FD2-F5271238ADBD} = {C6D8C70D-548D-4BCC-92E4-C74CE69EFF0A}
 		{B5E8C04D-FCEE-4FD6-8536-2DE8A39AA970} = {C6D8C70D-548D-4BCC-92E4-C74CE69EFF0A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

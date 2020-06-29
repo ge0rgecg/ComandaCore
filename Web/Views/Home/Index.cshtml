@@ -1,8 +1,45 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model AdicionarProdutoViewModel
+@{
+    ViewData["Title"] = "Adicionar Produto";
+
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <h1 class="display-4">Adicionar Produto</h1>
+
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-2">Número comanda</div>
+            <div class="col-10">
+                @Html.TextBoxFor(model => model.NumeroComanda, new { @type = "number" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2">Produto</div>
+            <div class="col-10">
+                @Html.DropDownListFor(model =>
+                     model.IdProduto,
+                     Model.Produtos.Select(s => new SelectListItem
+                     {
+                         Text = s.Nome,
+                         Value = s.Id.ToString()
+                     }), "-- Selecione um produto --")
+            </div>
+        </div>
+
+        <div>
+            <button class="btn btn-primary">Add Product</button>
+        </div>
+    }
 </div>
+
+@if (ViewBag.Message != null)
+{
+    <script>
+            alert('@ViewBag.Message');
+    </script>
+
+}
