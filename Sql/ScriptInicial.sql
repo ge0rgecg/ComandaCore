@@ -1,8 +1,29 @@
-﻿INSERT INTO LimiteProduto (Produto_Id, QuantidadeLimite)
+﻿USE COMANDA
+
+INSERT INTO Produto
+SELECT 'Cerveja', 5 
+WHERE NOT EXISTS (SELECT * FROM produto WHERE nome = 'Cerveja')
+GO
+
+INSERT INTO Produto
+SELECT 'Conhaque', 5 
+WHERE NOT EXISTS (SELECT * FROM produto WHERE nome = 'Conhaque')
+GO
+
+INSERT INTO Produto
+SELECT 'Suco', 5 
+WHERE NOT EXISTS (SELECT * FROM produto WHERE nome = 'Suco')
+GO
+
+INSERT INTO Produto
+SELECT 'Água', 5 
+WHERE NOT EXISTS (SELECT * FROM produto WHERE nome = 'Água')
+GO
+
+INSERT INTO LimiteProduto (Produto_Id, QuantidadeLimite)
 SELECT p.Id_Produto, 3 FROM produto p WHERE p.nome = 'Suco' 
 AND NOT EXISTS ( SELECT * FROM limiteproduto WHERE produto_id = p.Id_Produto)
 GO
-
 
 INSERT INTO Combo (nome)
 SELECT ('Cerveja com suco') 

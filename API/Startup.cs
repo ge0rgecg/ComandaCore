@@ -29,7 +29,7 @@ namespace ComandaAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ContextoDb>(
-                options => options.UseSqlServer("Data Source=.;Initial Catalog=Comanda;Integrated Security=True",
+                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                 providerOptions => providerOptions.EnableRetryOnFailure()));
 
             services.AddScoped<IControleComandaRepositorio, ControleComandaRepositorio>();
