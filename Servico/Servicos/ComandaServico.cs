@@ -1,6 +1,7 @@
 ﻿using Dominio;
 using Repositorio.Interface;
 using Servico.Interface;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,11 +21,11 @@ namespace Servico.Servicos
             ILimiteProdutoRepositorio limiteProdutoRepositorio,
             IComboRepositorio comboRepositorio)
         {
-            _produtoRepositorio = produtoRepositorio;
-            _controleComandaRepositorio = controleComandaRepositorio;
-            _fechamentoRepositorio = fechamentoRepositorio;
-            _limiteProdutoRepositorio = limiteProdutoRepositorio;
-            _comboRepositorio = comboRepositorio;
+            _produtoRepositorio = produtoRepositorio == null ? throw new ArgumentNullException("produtoRepositorio") : produtoRepositorio;
+            _controleComandaRepositorio = controleComandaRepositorio == null ? throw new ArgumentNullException("controleComandaRepositorio") : controleComandaRepositorio;
+            _fechamentoRepositorio = fechamentoRepositorio == null ? throw new ArgumentNullException("fechamentoRepositorio") : fechamentoRepositorio;
+            _limiteProdutoRepositorio = limiteProdutoRepositorio == null ? throw new ArgumentNullException("limiteProdutoRepositorio") : limiteProdutoRepositorio;
+            _comboRepositorio = comboRepositorio == null ? throw new ArgumentNullException("comboRepositorio") : comboRepositorio;
         }
         public async Task<Retorno<SemConteudo>> AdicionarProduto(ControleComanda controleComanda)
         {
@@ -57,7 +58,8 @@ namespace Servico.Servicos
                 {
                     return new Retorno<SemConteudo>
                     {
-                        Mensagem = $"Limite de produto excedido, não é permitido pedir mais desse item."
+                        Mensagem = $"Limite de produto excedido, não é permitido pedir mais desse item.",
+                        Ok = false
                     };
                 }
             }
@@ -137,7 +139,7 @@ namespace Servico.Servicos
                     Desconto = s.Desconto 
                 }).ToList());
 
-            return new Retorno<Fechamento> { Ok = true, Objeto = fechamento };
+            return new Retorno<Fechamento> { Ok = true, Objeto = fechamento};
         }
 
         public async Task<Retorno<SemConteudo>> Resetar(int numeroComanda)

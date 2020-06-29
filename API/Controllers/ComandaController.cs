@@ -1,6 +1,7 @@
 ﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
 using Servico.Interface;
+using System;
 using System.Threading.Tasks;
 
 namespace API.Controllers
@@ -20,7 +21,7 @@ namespace API.Controllers
         /// <param name="comandaServico">Interface do serviço da comanda.</param>
         public ComandaController(IComandaServico comandaServico)
         {
-            _comandaServico = comandaServico;
+            _comandaServico = comandaServico == null ? throw new ArgumentNullException("comandaServico") : comandaServico;
         }
 
         /// <summary>
