@@ -56,15 +56,15 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tabelas" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Produto.sql" />
-    <Build Include="ControleComanda.sql" />
-    <Build Include="Fechamento.sql" />
-    <Build Include="LimiteProduto.sql" />
-    <Build Include="Combo.sql" />
-    <Build Include="ComboItem.sql" />
-    <Build Include="ComboDesconto.sql" />
-    <Build Include="ScriptInicial.sql" />
+    <Build Include="Tabelas\Combo.sql" />
+    <Build Include="Tabelas\ComboDesconto.sql" />
+    <Build Include="Tabelas\ComboItem.sql" />
+    <Build Include="Tabelas\ControleComanda.sql" />
+    <Build Include="Tabelas\Fechamento.sql" />
+    <Build Include="Tabelas\LimiteProduto.sql" />
+    <Build Include="Tabelas\Produto.sql" />
   </ItemGroup>
 </Project>

@@ -26,12 +26,15 @@ namespace API.test
         [AutoData]
         public async Task Post_Fechar_Comanda(int numeroComanda)
         {
+            _mockServico.Setup(mock => mock.FecharComanda(It.IsAny<int>()))
+                .Returns(Task.FromResult(new Retorno<Fechamento>()));
+
             var controller = new ComandaController(_mockServico.Object);
 
             var response = await controller.FecharComanda(numeroComanda);
 
             Assert.NotNull(response);
-            Assert.IsType<OkResult>(response);
+            Assert.IsType<Retorno<Fechamento>>(response);
 
             _mockServico.Verify(
                 mock => mock.FecharComanda(It.IsAny<int>()),
@@ -44,12 +47,15 @@ namespace API.test
             int numeroComanda,
             int idProduto)
         {
+            _mockServico.Setup(mock => mock.AdicionarProduto(It.IsAny<ControleComanda>()))
+                .Returns(Task.FromResult(new Retorno<SemConteudo>()));
+
             var controller = new ComandaController(_mockServico.Object);
 
             var response = await controller.RegistrarProduto(numeroComanda, idProduto);
 
             Assert.NotNull(response);
-            Assert.IsType<OkResult>(response);
+            Assert.IsType<Retorno<SemConteudo>>(response);
 
             _mockServico.Verify(
                 mock => mock.AdicionarProduto(It.IsAny<ControleComanda>()),
@@ -60,12 +66,15 @@ namespace API.test
         [AutoData]
         public async Task Post_Resetar_Comanda(int numeroComanda)
         {
+            _mockServico.Setup(mock => mock.Resetar(It.IsAny<int>()))
+                .Returns(Task.FromResult(new Retorno<SemConteudo>()));
+
             var controller = new ComandaController(_mockServico.Object);
 
             var response = await controller.ResetarComanda(numeroComanda);
 
             Assert.NotNull(response);
-            Assert.IsType<OkResult>(response);
+            Assert.IsType<Retorno<SemConteudo>>(response);
 
             _mockServico.Verify(
                 mock => mock.Resetar(It.IsAny<int>()),

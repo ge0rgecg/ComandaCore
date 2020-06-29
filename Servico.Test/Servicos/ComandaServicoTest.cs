@@ -105,7 +105,7 @@ namespace Servico.Test
         [InlineAutoData(0, 0, false, false, "Informar o Id do Produto.",false)]
         [InlineAutoData(1, 0, false, false, "Informar um número de comanda válido.", false)]
         [InlineAutoData(1, 1, true, true, "Limite de produto excedido, não é permitido pedir mais desse item.", false)]
-        [InlineAutoData(1, 1, true, false, "", true)]
+        [InlineAutoData(1, 1, true, false, null, true)]
         public async Task test_adicionar_produto(
             int produtoId,
             int numeroComanda,
